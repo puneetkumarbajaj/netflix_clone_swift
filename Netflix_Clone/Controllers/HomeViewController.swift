@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
         
-        getPopular()
+        
     }
     
     private func configureNavBar() {
@@ -50,49 +50,6 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
     
-    private func getTrendingMovies(){
-        APICaller.shared.getTrendingMovies { results in
-            switch results{
-            case.success(let movies):
-                print(movies)
-            case.failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func getTrendingTvs(){
-        APICaller.shared.getTrendingTvs { results in
-            switch results{
-            case.success(let tvs):
-                print(tvs)
-            case.failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func getUpcomingMovies() {
-        APICaller.shared.getTrendingMovies { results in
-            switch results{
-            case.success(let movies):
-                print(movies)
-            case.failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func getPopular() {
-        APICaller.shared.getTrendingMovies { results in
-            switch results{
-            case.success(let movies):
-                print(movies)
-            case.failure(let error):
-                print(error)
-            }
-        }
-    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
